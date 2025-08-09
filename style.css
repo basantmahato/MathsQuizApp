@@ -6,18 +6,18 @@
     --text-color: #333;
 }
 
-.background{
+.background {
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background: linear-gradient(135deg, #a0204c, #6a0dad, #1e0f47);
     background-size: 400% 400%;
     animation: gradientShift 10s ease infinite;
+    padding: 20px;
 }
 
 body {
@@ -34,29 +34,27 @@ p {
     font-weight: 400;
 }
 
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
 @keyframes gradientShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.container h1{
     color: #fff;
+    text-align: center;
 }
 
-.box{
+.box {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -64,42 +62,67 @@ p {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 19px 41px rgba(0, 0, 0, 0.36);
-    height: 180px;
-    min-width: 80% ;
+    padding: 20px;
     margin: 10px;
-
+    max-width: 500px;
+    width: 100%;
 }
 
-.box h2{
-    margin: 10px;
-   font-size: 10px;
+.box h2 {
+    margin: 5px 0;
+    font-size: 14px;
 }
 
-.form{
+.form {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 
-.answerInput{
+.answerInput {
+    flex: 1;
+    min-width: 120px;
     padding: 8px 10px;
-    margin-right: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .primary-btn {
-    margin: 10px;
     background-color: var(--primary-color);
     color: #fff;
     border: none;
     border-radius: 5px;
     padding: 10px 15px;
+    margin: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .primary-btn:hover {
     background-color: black;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .box h3 {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .primary-btn, .answerInput {
+        width: 100%;
+    }
+
+    .form {
+        flex-direction: column;
+    }
 }
